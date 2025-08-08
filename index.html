@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Power Stations in Russian Regions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button id="langToggle" onclick="toggleLanguage()">Русский</button>
+        </div>
+        
+        <h1 id="mainTitle">Solar Power Stations (200 kW) in Russian Regions</h1>
+        <p id="copyrightNotice">Data is copyright protected. Copying prohibited.</p>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by region..." oninput="filterTable()">
+            <select id="statusFilter" onchange="filterTable()">
+                <option value="all">All statuses</option>
+                <option value="Готово">Ready</option>
+                <option value="Нет данных">No data</option>
+            </select>
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Code</th>
+                        <th>Admin Center</th>
+                        <th>Data Status</th>
+                        <th>Annual Output (MWh)</th>
+                        <th>Specific Output (kWh/kW/year)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
